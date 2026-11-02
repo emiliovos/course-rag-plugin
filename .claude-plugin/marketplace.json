@@ -1,11 +1,18 @@
 {
   "name": "vostec",
   "description": "Plugins privados de Vostec",
-  "owner": { "name": "Vostec" },
+  "owner": {
+    "name": "Vostec"
+  },
   "plugins": [
     {
       "name": "course-rag",
-      "source": "./plugins/course-rag",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/emiliovos/course-rag-plugin.git",
+        "path": "plugins/course-rag",
+        "ref": "course-rag--v1.0.0"
+      },
       "description": "Búsqueda en una biblioteca privada de conocimiento. Requiere un correo autorizado."
     }
   ]
