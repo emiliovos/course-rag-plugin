@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "course-rag": {
+      "type": "http",
+      "url": "https://vault-mcp-login.boxlab.cloud/mcp"
+    }
+  }
+}

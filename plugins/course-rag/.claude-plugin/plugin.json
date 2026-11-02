@@ -1,0 +1,7 @@
+{
+  "name": "course-rag",
+  "displayName": "Course RAG",
+  "version": "1.0.0",
+  "description": "Búsqueda en una biblioteca privada de conocimiento. Requiere un correo autorizado.",
+  "author": { "name": "Vostec" }
+}

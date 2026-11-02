@@ -1,0 +1,12 @@
+{
+  "name": "vostec",
+  "description": "Plugins privados de Vostec",
+  "owner": { "name": "Vostec" },
+  "plugins": [
+    {
+      "name": "course-rag",
+      "source": "./plugins/course-rag",
+      "description": "Búsqueda en una biblioteca privada de conocimiento. Requiere un correo autorizado."
+    }
+  ]
+}
