@@ -11,8 +11,10 @@ plugins/course-rag/.claude-plugin/plugin.json
 plugins/course-rag/.mcp.json
 plugins/course-rag/skills/search-courses/SKILL.md
 tools/check-plugin.sh'
-UNEXPECTED=$(git ls-files | LC_ALL=C sort | LC_ALL=C comm -23 - "$(printf '%s\n' "$ALLOWED" | LC_ALL=C sort > .allowed.tmp; echo .allowed.tmp)")
-rm -f .allowed.tmp
+LIST=$(mktemp)
+trap 'rm -f "$LIST"' EXIT
+printf '%s\n' "$ALLOWED" | LC_ALL=C sort > "$LIST"
+UNEXPECTED=$(git ls-files | LC_ALL=C sort | LC_ALL=C comm -23 - "$LIST")
 if [ -n "$UNEXPECTED" ]; then
   echo "Archivos fuera de la allowlist; revísalos antes de agregarlos:" >&2
   echo "$UNEXPECTED" >&2
